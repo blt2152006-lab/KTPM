@@ -1,0 +1,263 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Roboto', sans-serif; background: #f5f5f5; color: #333; }
+.container { width: 90%; max-width: 1200px; margin: 0 auto; }
+/* Header */
+header { background: #0d47a1; color: #fff; }
+header .container { display: flex; align-items: center; justify-content: space-between; padding: 15px 0; }
+header .logo img { height: 50px; }
+header nav {
+  display: flex;
+}
+
+header nav a {
+  position: relative;
+  color: white;
+  text-decoration: none;
+  padding: 0 15px;
+  font-weight: 500;
+}
+
+/* 👉 Gạch dọc ngăn cách */
+header nav a:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 20px;
+  width: 1px;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* 👉 Hiệu ứng hover (gạch dưới) */
+header nav a::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0;
+  height: 2px;
+  background: #ff9800;
+  transition: 0.3s;
+}
+
+header nav a:hover::before {
+  width: 100%;
+}
+
+/* 👉 Hover đổi màu chữ */
+header nav a:hover {
+  color: #ffcc80;
+}
+/* Hero */
+.hero { position: relative; background: url('https://kiemtoan3m.com/storage/2023/01/3M-Khung-an-pham-dang-WEB-1-9-1024x576.png') center/cover no-repeat; color: #333; text-align: center; padding: 100px 20px; overflow: hidden; }
+.hero ::before {     
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  z-index: 0;
+}
+.hero .container {
+  position: relative;
+  z-index: 1;
+}
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+    color: #2c3e50;
+    opacity: 0.85;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: #f1f1f1;
+    text-shadow: 0 1px 5px rgba(0,0,0,0.5);
+    opacity: 0.75;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 12px 25px;
+  border-radius: 6px;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+/* Nút chính */
+.btn-primary {
+  background: #1976d2;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: #125ea7;
+  transform: translateY(-2px);
+}
+
+/* Nút phụ (cam) */
+.btn-secondary {
+  background: #ff9800;
+  color: #fff;
+}
+
+.btn-secondary:hover {
+  background: #e68900;
+  transform: translateY(-2px);
+}
+/* Services section */
+.services { text-align: center; padding: 30px 0; }
+.card-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
+.card { background: #fff; border-radius: 8px; overflow: hidden; width: 300px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+.card img { width: 100%; height: 200px; object-fit: cover; }
+.card h3 { margin: 15px 0 5px 0; }
+.card p { padding: 0 15px; color: #555; }
+.card .btn-secondary { display: block; margin: 15px auto 20px auto; padding: 10px 20px; }
+
+/* HERO */
+.service-hero {
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+              url('https://images.unsplash.com/photo-1554224155-6726b3ff858f');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-align: center;
+  padding: 80px 0;
+}
+
+.service-hero h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+/* GRID */
+.service-grid {
+  display: flex;
+  gap: 20px;
+  margin-top: 40px;
+}
+
+/* CARD */
+.service-card {
+  flex: 1;
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+}
+
+/* TEXT */
+.service-card h3 {
+  margin-bottom: 10px;
+  color: #1f4e99;
+}
+
+.service-card p {
+  margin-bottom: 15px;
+}
+
+/* BUTTON */
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #ff9800;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #e68900;
+}
+/* Main layout */
+main { display: flex; gap: 20px; padding: 20px; }
+.sidebar { background: #fafafa; padding: 20px; border-radius: 8px; width: 300px; }
+.sidebar h3 { margin-bottom: 10px; }
+.sidebar form label { display: block; margin-top: 10px; font-weight: 500; }
+.sidebar form input, .sidebar form textarea { width: 100%; padding: 8px; margin-top: 5px; border: 1px solid #ccc; border-radius: 4px; }
+.content { flex: 1; background: #fff; padding: 20px; border-radius: 8px; }
+/* Footer */
+footer {
+  background: #1f4e99;
+  color: white;
+  margin-top: 40px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  padding: 40px 0;
+}
+
+.footer-col {
+  flex: 1;
+}
+
+.footer-col h3 {
+  margin-bottom: 15px;
+}
+
+.footer-col p {
+  margin: 5px 0;
+}
+
+.footer-col a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  margin: 5px 0;
+  transition: 0.3s;
+}
+
+/* 👉 Hover đẹp */
+.footer-col a:hover {
+  color: #ffcc80;
+  transform: translateX(5px);
+}
+
+/* 👉 Gạch dưới khi hover */
+.footer-col a::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #ff9800;
+  transition: 0.3s;
+}
+
+.footer-col a:hover::after {
+  width: 40%;
+}
+
+/* 👉 phần dưới cùng */
+.footer-bottom {
+  text-align: center;
+  padding: 15px 0;
+  background: #163d7a;
+  font-size: 14px;
+}
+/* Nút gọi điện thoại */
+.phone-button {
+  position: fixed; bottom: 20px; right: 20px;
+  background: #ff9800; color: #fff;
+  width: 50px; height: 50px; border-radius: 50%;
+  text-align: center; font-size: 24px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3); text-decoration: none;
+  line-height: 50px;
+}
+.content { 
+  background: url('https://tse4.mm.bing.net/th/id/OIP.e2C_AY8uayULbNSmc39hogHaEi?w=1139&h=699&rs=1&pid=ImgDetMain&o=7&rm=3');
+  background-size: cover;
+  background-position: center;
+}
